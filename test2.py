@@ -3,7 +3,7 @@ from ortools.sat.python import cp_model
 # Define the model
 model = cp_model.CpModel()
 
-# Courses per semester (updated study plan)
+# Courses per semester
 courses_per_semester = {
     "1st Semester": ["CS101", "CHM101", "MATH111", "ENG101", "ISC101", "ARAB101"],
     "2nd Semester": ["CS102", "CS175", "MATH113", "STAT101", "ENG103", "ISC103"],
