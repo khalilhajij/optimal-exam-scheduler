@@ -30,6 +30,7 @@
                 <th>Course Name</th>
                 <th>Semester</th>
                 <th>Prerequisites</th>
+                <th>Major(s)</th>
             </tr>
         </thead>
         <tbody>
@@ -37,8 +38,9 @@
                 <td th:text="${exam.timeSlot.day}"></td>
                 <td th:text="${exam.timeSlot.time}"></td>
                 <td th:text="${exam.course.name}"></td>
-                <td th:text="${exam.course.semester}"></td>
+                <td th:text="${exam.course.majorToSemester}"></td>
                 <td th:text="${exam.course.prerequisites}"></td>
+                <td th:text="${exam.course.majors}"></td>
             </tr>
         </tbody>
     </table>

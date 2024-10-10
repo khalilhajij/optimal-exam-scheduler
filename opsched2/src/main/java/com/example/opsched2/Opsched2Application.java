@@ -12,6 +12,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
+import java.util.Map;
 
 @SpringBootApplication
 @Controller // Changed from RestController
@@ -29,49 +30,80 @@ public class Opsched2Application {
         // Create a problem instance
         ExamSchedule problem = new ExamSchedule(
                 List.of(
-                        new Exam(new Course("CS101", "1st Semester", List.of())),
-                        new Exam(new Course("CHM101", "1st Semester", List.of())),
-                        new Exam(new Course("MATH111", "1st Semester", List.of())),
-                        new Exam(new Course("ENG101", "1st Semester", List.of())),
-                        new Exam(new Course("ISC101", "1st Semester", List.of())),
-                        new Exam(new Course("ARAB101", "1st Semester", List.of())),
+                        
+                        //new Course("CS101", Map.of("SE", "1st Semester", "CS", "1st Semester", "IS", "2nd Semester"), List.of(), List.of("SE", "CS", "IS"));
 
-                        new Exam(new Course("CS102", "2nd Semester", List.of("CS101"))),
-                        new Exam(new Course("CS175", "2nd Semester", List.of())),
-                        new Exam(new Course("MATH113", "2nd Semester", List.of("MATH111"))),
-                        new Exam(new Course("STAT101", "2nd Semester", List.of("MATH111"))),
-                        new Exam(new Course("ENG103", "2nd Semester", List.of("ENG101"))),
-                        new Exam(new Course("ISC103", "2nd Semester", List.of("ISC101"))),
 
-                        new Exam(new Course("CS285", "3rd Semester", List.of("CS101"))),
-                        new Exam(new Course("SE201", "3rd Semester", List.of("CS102"))),
-                        new Exam(new Course("PHY105", "3rd Semester", List.of())),
-                        new Exam(new Course("COM201", "3rd Semester", List.of("ENG101"))),
-                        new Exam(new Course("ISC105", "3rd Semester", List.of("ISC103"))),
-                        new Exam(new Course("CS210", "3rd Semester", List.of("CS102"))),
+                        // SE, CS, and IS Shared Courses
+                        new Exam(new Course("CS101", Map.of("SE", "1st Semester", "CS", "1st Semester", "IS", "1st Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("MATH111", Map.of("SE", "1st Semester", "CS", "1st Semester", "IS", "1st Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ENG101", Map.of("SE", "1st Semester", "CS", "1st Semester", "IS", "1st Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ISC101", Map.of("SE", "1st Semester", "CS", "1st Semester", "IS", "1st Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ARAB101", Map.of("SE", "1st Semester", "CS", "1st Semester", "IS", "1st Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        
+                        new Exam(new Course("CS102", Map.of("SE", "2nd Semester", "CS", "2nd Semester", "IS", "2nd Semester"), List.of("CS101"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("CS175", Map.of("SE", "2nd Semester", "CS", "2nd Semester", "IS", "2nd Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("STAT101", Map.of("SE", "2nd Semester", "CS", "2nd Semester", "IS", "2nd Semester"), List.of("MATH111"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ENG103", Map.of("SE", "2nd Semester", "CS", "2nd Semester", "IS", "2nd Semester"), List.of("ENG101"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ISC103", Map.of("SE", "2nd Semester", "CS", "2nd Semester", "IS", "2nd Semester"), List.of("ISC101"), List.of("SE", "CS", "IS"))),
+                        
+                        new Exam(new Course("CS285", Map.of("SE", "3rd Semester", "CS", "3rd Semester", "IS", "3rd Semester"), List.of("CS101"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("CS210", Map.of("SE", "3rd Semester", "CS", "3rd Semester", "IS", "3rd Semester"), List.of("CS102"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("COM201", Map.of("SE", "3rd Semester", "CS", "3rd Semester", "IS", "3rd Semester"), List.of("ENG101"), List.of("SE", "CS", "IS"))),
+                        
+                        new Exam(new Course("CS330", Map.of("SE", "4th Semester", "CS", "4th Semester", "IS", "4th Semester"), List.of("CS210"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("PSY101", Map.of("SE", "4th Semester", "CS", "4th Semester", "IS", "4th Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ARAB103", Map.of("SE", "5th Semester", "CS", "4th Semester", "IS", "3rd Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                                                
+                        new Exam(new Course("CS331", Map.of("SE", "5th Semester", "CS", "5th Semester", "IS", "5th Semester"), List.of("CS175"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("CYS401", Map.of("SE", "5th Semester", "CS", "5th Semester", "IS", "5th Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ISC203", Map.of("SE", "5th Semester", "CS", "6th Semester", "IS", "7th Semester"), List.of("ISC103"), List.of("SE", "CS", "IS"))),
+                        new Exam(new Course("ETHC303", Map.of("SE", "6th Semester", "CS", "5th Semester", "IS", "6th Semester"), List.of(), List.of("SE", "CS", "IS"))),
+                        
+                        new Exam(new Course("ARAB203", Map.of("SE", "7th Semester", "CS", "7th Semester", "IS", "7th Semester"), List.of("ARAB101"), List.of("SE", "CS", "IS"))),
+                        
+                        // SE, CS Shared Courses
+                        new Exam(new Course("SE201", Map.of("SE", "3rd Semester", "CS", "4th Semester"), List.of("CS102", "ENG103"), List.of("SE", "CS"))),
+                        new Exam(new Course("SE371", Map.of("SE", "6th Semester", "CS", "6th Semester"), List.of("CS210"), List.of("SE", "CS"))),
+                        new Exam(new Course("MATH113", Map.of("SE", "2nd Semester", "CS", "2nd Semester"), List.of("MATH111"), List.of("SE", "CS"))),
+                        new Exam(new Course("CS340", Map.of("SE", "5th Semester", "CS", "5th Semester"), List.of("CS210"), List.of("SE", "CS"))),
+                        
+                        // IS, CS Shared Courses
+                        new Exam(new Course("SCI101", Map.of("CS", "1st Semester", "IS", "1st Semester"), List.of(), List.of("IS", "CS"))),
+                        
+                        // SE-only Courses
+                        new Exam(new Course("CHM101", Map.of("SE", "1st Semester"), List.of(), List.of("SE"))),
+                        new Exam(new Course("SE365", Map.of("SE", "4th Semester"), List.of("CS210"), List.of("SE"))),
+                        new Exam(new Course("SE311", Map.of("SE", "4th Semester"), List.of("SE201"), List.of("SE"))),
+                        new Exam(new Course("SE322", Map.of("SE", "5th Semester"), List.of("SE311"), List.of("SE"))),
+                        new Exam(new Course("SE401", Map.of("SE", "6th Semester"), List.of(), List.of("SE"))),
+                        new Exam(new Course("SE423", Map.of("SE", "7th Semester"), List.of("CYS401"), List.of("SE"))),
+                        new Exam(new Course("SE411", Map.of("SE", "7th Semester"), List.of("SE401"), List.of("SE"))),
+                        new Exam(new Course("MATH223", Map.of("SE", "4th Semester"), List.of("MATH113"), List.of("SE"))),
+                        
+                        // CS-only Courses
+                        new Exam(new Course("CS223", Map.of("CS", "3rd Semester"), List.of("CS101", "MATH113"), List.of("CS"))),
+                        new Exam(new Course("CS320", Map.of("CS", "4th Semester"), List.of("CS210"), List.of("CS"))),
+                        new Exam(new Course("CS311", Map.of("CS", "5th Semester"), List.of("CS285", "CS210"), List.of("CS"))),
+                        new Exam(new Course("CS435", Map.of("CS", "6th Semester"), List.of("CS330", "CS331"), List.of("CS"))),
+                        
+                        // IS-only Courses
+                        new Exam(new Course("BUS101", Map.of("IS", "2nd Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("ACC111", Map.of("IS", "3rd Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS201", Map.of("IS", "3rd Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS205", Map.of("IS", "4th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS231", Map.of("IS", "4th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS241", Map.of("IS", "4th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS321", Map.of("IS", "5th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("MKT301", Map.of("IS", "5th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("ECON101", Map.of("IS", "5th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS311", Map.of("IS", "6th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS361", Map.of("IS", "6th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("IS371", Map.of("IS", "6th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("COM301", Map.of("IS", "7th Semester"), List.of(), List.of("IS"))),
+                        new Exam(new Course("FIN210", Map.of("IS", "7th Semester"), List.of(), List.of("IS")))
 
-                        new Exam(new Course("SE365", "4th Semester", List.of("CS210"))),
-                        new Exam(new Course("SE311", "4th Semester", List.of("SE201"))),
-                        new Exam(new Course("CS330", "4th Semester", List.of("CS210"))),
-                        new Exam(new Course("PHY205", "4th Semester", List.of("PHY105"))),
-                        new Exam(new Course("PSY101", "4th Semester", List.of())),
-                        new Exam(new Course("MATH223", "4th Semester", List.of("MATH113"))),
 
-                        new Exam(new Course("CS340", "5th Semester", List.of("CS210"))),
-                        new Exam(new Course("CS331", "5th Semester", List.of("CS175"))),
-                        new Exam(new Course("SE322", "5th Semester", List.of("SE311"))),
-                        new Exam(new Course("CYS401", "5th Semester", List.of())),
-                        new Exam(new Course("ISC203", "5th Semester", List.of("ISC103"))),
-                        new Exam(new Course("ARAB103", "5th Semester", List.of("ARAB101"))),
-
-                        new Exam(new Course("MATH221", "6th Semester", List.of("MATH113"))),
-                        new Exam(new Course("SE371", "6th Semester", List.of("CS210"))),
-                        new Exam(new Course("ETHC303", "6th Semester", List.of("CYS401"))),
-                        new Exam(new Course("SE401", "6th Semester", List.of())),
-
-                        new Exam(new Course("SE423", "7th Semester", List.of("CYS401"))),
-                        new Exam(new Course("SE411", "7th Semester", List.of("SE401"))),
-                        new Exam(new Course("ARAB203", "7th Semester", List.of("ARAB101")))
                 ),
                 List.of(
                         new TimeSlot(0, "08:30"),
