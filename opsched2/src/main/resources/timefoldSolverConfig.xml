@@ -1,7 +1,0 @@
-<solver>
-    <solutionClass>com.example.opsched2.ExamSchedule</solutionClass>
-    <entityClass>com.example.opsched2.Exam</entityClass>
-    <scoreDirectorFactory>
-        <constraintProviderClass>com.example.opsched2.ExamConstraintProvider</constraintProviderClass>
-    </scoreDirectorFactory>
-</solver>
