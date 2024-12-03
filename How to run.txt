@@ -1,0 +1,27 @@
+How to Run the Application:
+
+Frontend:
+
+- Navigate to the my-exam-scheduling-app folder in your integrated terminal.
+
+- Install the required node modules by running:
+"npm install"
+
+- Start the application by running:
+"npm start"
+
+
+Backend:
+(Ensure you have an MSSQL database set up.)
+
+(Update the application resources file to match your database configuration.) 
+
+(Use the attached CCIS study plan (found in the zip file) to populate the database with the required data.)
+
+(Ensure you have Maven installed and your JDBC setup configured properly.)
+
+Run the backend with the following command:
+"mvn spring-boot:run"
+
+
+Once both the frontend and backend are running, the application should be operational.
