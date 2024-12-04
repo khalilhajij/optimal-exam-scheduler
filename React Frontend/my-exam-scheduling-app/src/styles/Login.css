@@ -1,0 +1,143 @@
+/* Login.css */
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Ensure no overflow */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0 auto; /* Ensure the container takes full width */
+  }
+  
+  .background-image {
+    position: absolute; /* Position it absolutely within the container */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    border-radius: 8px; /* Optional */
+    background-image: url(https://assets.api.uizard.io/api/cdn/stream/fc1aabc3-0a93-4a68-8258-7a7d064ec1e5.jpeg); /* Background image */
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    z-index: -1; /* Ensure it stays behind other elements */
+  }
+  
+  .card {
+    width: 736px;
+    height: 751px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+   
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    position: relative; /* Ensure it stays above the background */
+  }
+
+  .card-content {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the text and inputs */
+  }
+  
+  .inner-image {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    width: 381px;
+    height: 119px;
+    border-radius: 8px;
+    background-image: url(https://assets.api.uizard.io/api/cdn/stream/32413e64-7c35-4e63-b384-0035ed3ea1bd.png); /* Inner image */
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .text-large {
+    font-weight: 500;
+    color: #1e1f26;
+    font-size: 24px;
+    font-family: "Poppins";
+    line-height: 31px;
+    margin-top: 20px; /* Added margin for spacing */
+    margin-bottom: 0px;
+
+  }
+  
+  .text-small {
+    color: #000000;
+    font-size: 16px;
+    font-family: "Poppins";
+    line-height: 24px;
+    text-align: center;
+    margin-top: 10px; /* Added margin for spacing */
+    margin-bottom: 20px;
+  }
+
+  .text-side {
+    color: #000000;
+    font-size: 16px;
+    font-family: "Poppins";
+    line-height: 24px;
+    text-align: center;
+    margin-left: 66%;
+    margin-bottom: 30px;
+  }
+  
+  .text-gray {
+    color: #666666;
+    font-size: 16px;
+    font-family: "Poppins";
+    line-height: 21px;
+    margin-top: 10px; /* Added margin for spacing */
+  }
+
+  .border-red-500 {
+    border-color: #f56565;
+  }
+  
+  .input {
+    width: 552px;
+    height: 61px;
+    padding: 0px 8px;
+    border: 1px solid #d9d6d6;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #707071;
+    font-size: 14px;
+    font-family: "Poppins";
+    line-height: 24px;
+    outline: none;
+    margin: 10px 0; /* Spacing between fields */
+  }
+  
+  .button {
+    width: 500px;
+    height: 60px;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    background-color: #128fbb;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "Poppins";
+    line-height: 23px;
+    outline: none;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #285bb5;
+  }
+
+  

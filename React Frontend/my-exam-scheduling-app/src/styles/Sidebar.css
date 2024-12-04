@@ -1,0 +1,24 @@
+#sidebar {
+  height: auto;
+}
+
+#sidebar:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.transition-custom {
+  transition: transform 50ms ease-in-out;
+}
+
+#logout-button {
+  position: fixed; /* Position the logout button absolutely within the sidebar */
+  bottom: 20px; /* Adjust the bottom position as needed */
+}
+
+.react-datepicker__input-container {
+  width: 100%; /* Set width to 100% of the parent container */
+  max-width: 500px; /* Set a max-width to ensure it doesn't get too large */
+  min-width: 384px; /* Set a min-width to ensure it doesn't get too small */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+

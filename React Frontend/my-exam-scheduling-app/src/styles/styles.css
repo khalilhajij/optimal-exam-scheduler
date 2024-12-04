@@ -1,0 +1,353 @@
+/* From Uiverse.io by AlimurtuzaCodes */
+.btn {
+    border: none;
+    width: 10em;
+    height: 3em;
+    border-radius: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #c2c0c0;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+  }
+  
+  .sparkle {
+    fill: #AAAAAA;
+    transition: all 800ms ease;
+  }
+  
+  .text {
+    font-weight: 600;
+    color: #000000;
+    font-size: medium;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(0deg,#7cb0f3,#3f59ea);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #1b17ff;
+    transform: translateY(-2px);
+  }
+  
+  .btn:hover .text {
+    color: white;
+  }
+  
+  .btn:hover .sparkle {
+    fill: white;
+    transform: scale(1.2);
+  }
+
+
+  .excel-btn {
+    border: none;
+    width: 10em;
+    height: 3em;
+    border-radius: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #c2c0c0;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+  }
+  
+  .excel-btn:hover {
+    background: linear-gradient(0deg,#6dcf65,#49a823);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #22b915;
+    transform: translateY(-2px);
+  }
+  
+  .excel-btn:hover .text {
+    color: white;
+  }
+  
+  .excel-btn .sparkle {
+    fill: white;
+    transform: scale(1.2);
+  }
+
+  .delete-btn {
+    border: none;
+    width: 10em;
+    height: 3em;
+    border-radius: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #c2c0c0;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+  }
+  
+  .delete-btn:hover {
+    background: linear-gradient(0deg,#bb4e4e,#c52020);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #920d0d;
+    transform: translateY(-2px);
+  }
+  
+  .delete-btn:hover .text {
+    color: white;
+  }
+  
+  .delete-btn .sparkle {
+    fill: white;
+    transform: scale(1.2);
+  }
+
+
+
+  /* styles.css */
+@media (min-width: 768px) {
+  #sidebar {
+    width: 12rem; /* 48px */
+  }
+}
+
+@media (min-width: 1024px) {
+  #sidebar {
+    width: 16rem; /* 64px */
+  }
+}
+
+/* styles.css */
+
+/* Ensure the table container is scrollable on smaller screens */
+.table-responsive {
+    overflow-x: auto;
+  }
+  
+  /* Adjust table styles for different screen sizes */
+  @media (max-width: 768px) {
+    .table-responsive table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    .table-responsive th,
+    .table-responsive td {
+      padding: 8px;
+      text-align: left;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .table-responsive table {
+      width: 100%;
+    }
+  
+    .table-responsive th,
+    .table-responsive td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    .table-auto th,
+.table-auto td {
+  width: 150px; /* Adjust the width as needed */
+}
+  }
+
+.table-responsive {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+/* From Uiverse.io by PriyanshuGupta28 */ 
+.custom-loader {
+  width: 40px; /* Adjusted size */
+  height: 40px; /* Adjusted size */
+  display: grid;
+  margin: auto; /* Center the loader */
+}
+
+.custom-loader::before,
+.custom-loader::after {
+  content: "";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side,#777978 92%,rgba(179, 53, 53, 0));
+  background: var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s2 1s infinite;
+}
+
+.custom-loader::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear;
+}
+
+@keyframes s2 {
+  100% {
+    transform: rotate(.5turn);
+  }
+}
+
+/* styles.css */
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+  transform-style: preserve-3d;
+}
+
+.custom-checkbox .checkmark::before {
+  content: "\2713";
+  font-size: 16px;
+  color: transparent;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #333;
+  border-color: #333;
+  transform: scale(1.1) rotateZ(360deg) rotateY(360deg);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::before {
+  color: #fff;
+}
+
+.custom-checkbox:hover {
+  color: #666;
+}
+
+.custom-checkbox:hover .checkmark {
+  border-color: #666;
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.custom-checkbox input[type="checkbox"]:focus + .checkmark {
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.custom-checkbox .checkmark,
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  transition: background-color 1.3s, border-color 1.3s, color 1.3s, transform 0.3s;
+}
+
+  
+/* Custom styles for dark mode */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html.dark, body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+html.dark .bg-gray-200, body.dark .bg-gray-200 {
+  background-color: #1e1e1e;
+}
+
+html.dark .bg-white, body.dark .bg-white {
+  background-color: #2e2e2e;
+}
+
+html.dark .text-gray-700, body.dark .text-gray-700 {
+  color: #e0e0e0;
+}
+
+html.dark .text-gray-600, body.dark .text-gray-600 {
+  color: #d0d0d0;
+}
+
+html.dark .text-blue-500, body.dark .text-blue-500 {
+  color: #90caf9;
+}
+
+html.dark .border-gray-300, body.dark .border-gray-300 {
+  border-color: #424242;
+}
+
+html.dark .rounded-lg, body.dark .rounded-lg {
+  border-radius: 0.5rem;
+}
+
+html.dark .shadow, body.dark .shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+html.dark .hover\:bg-gray-400:hover, body.dark .hover\:bg-gray-400:hover {
+  background-color: #616161;
+}
+
+html.dark .hover\:bg-red-700:hover, body.dark .hover\:bg-red-700:hover {
+  background-color: #d32f2f;
+}
+
+html.dark .hover\:bg-blue-700:hover, body.dark .hover\:bg-blue-700:hover {
+  background-color: #1976d2;
+}
+
+
+html.dark select, body.dark select {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border-color: #424242;
+}
+
+html.dark input, body.dark input {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border-color: #424242;
+}
+
+html.dark button, body.dark button {
+  background-color: #a7a7a7;
+  color: #ffffff;
+  border-color: #424242;
+}
+
+/* Change sidebar background color to gradient black in dark mode */
+html.dark #sidebar, body.dark #sidebar .prof{
+  background: linear-gradient(to bottom, #242424, #000000);
+}
+
+/* Change profile div background color to gray-ish in dark mode */
+html.dark #sidebar .profile-div {
+  background-color: #3a3a3a;
+}
+
+
